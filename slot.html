@@ -23,6 +23,11 @@
             <div id="slot1">0</div>
             <input type="button" value="STOP" id="stop1">
         </div>
+        </div>
+        <div class="slot">
+            <div id="slot2">0</div>
+            <input type="button" value="STOP" id="stop2">
+        </div>
 
         <script>
             (function() {
@@ -42,6 +47,9 @@
                 document.getElementById('stop1').onclick = function () {
                     stopSlot(1);
                 };
+                document.getElementById('stop2').onclick = function () {
+                    stopSlot(2);
+                };
 
                 // スロット開始
                 startSlot();
@@ -56,6 +64,7 @@
                     // スロット回転開始
                     runSlot(0);
                     runSlot(1);
+                    runSlot(2);
                 }
 
                 // 各スロットの値を0~9で変化させる
@@ -87,7 +96,7 @@
 
                     // 全てのスロットが止まっていたら結果を取得
                     stopCount++;
-                    if (stopCount == 2) {
+                    if (stopCount == 3) {
                         checkResult();
                     }
                 }
@@ -97,12 +106,14 @@
 
                     // スロットが揃ったかチェックする
                     if (results[0] == results[1]) {
-                        alert("Excellent!");
-                        interval *= 0.8;
-                        score += 1000 / interval;
-                        updateScore();
-                        startSlot();
-                        } else {
+                        if (results[1] == results[2]){
+                            alert("Excellent!");
+                            interval *= 0.8;
+                            score += 1000 / interval;
+                            updateScore();
+                            startSlot();
+                        }else{gameover();}
+                    } else {
                         gameover();
                     }
                 }
@@ -136,3 +147,5 @@
         </script>
     </body>
 </html>
+
+
