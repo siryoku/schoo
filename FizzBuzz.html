@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>FizzBuzz問題にチャレンジ</title>
+    </head>
+    <body>
+        <p>回答用のテンプレートとして使って下さい</p>
+        <script>
+        /*
+         * FizzBuzz問題にチャレンジ
+         * 1から100までの数を表示するプログラムを書いて下さい。
+         * ただし3の倍数のときは数の代わりに「Fizz」、
+         * 5の倍数のときは「Buzz」と表示し、
+         * 3と5両方の倍数の場合には「FizzBuzz」と表示して下さい。
+         */
+         // 以下にプログラムを書いてね！
+        let i = 0
+        while(i < 100){
+            i++;
+            if(i % 15 === 0){
+                console.log("FizzBuzz");
+            }else if(i % 5 === 0){
+                console.log("Buzz");
+            }else if(i % 3 === 0){
+                console.log("Fizz");
+            }else{
+                console.log(i);
+            }
+        }
+        </script>
+    </body>
+</html>
+
+
